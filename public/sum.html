@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Get Sum!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <form id="numberForm">
+        <input type="text" name="number">
+        <button type="submit">Submit</button>   
+    </form>
+    <p id="answer"></p>
+</body>
+
+<script>
+document.getElementById("numberForm").addEventListener("submit", (event) => {event.preventDefault();})
+const numberChoose = document.querySelector("input");
+const answerDisplay = document.querySelector("#answer");
+document.querySelector("button").addEventListener("click", ()=>{
+    const numberChosen = numberChoose.value;
+    displayAnswer(numberChosen);
+})
+
+function displayAnswer(number){
+    const url = `../getData?number=${number}`;
+    fetch(url)
+    .then((response) => {
+        return response.text();
+    })
+    .then((response_Answer) => {
+        answerDisplay.innerHTML = response_Answer;
+    })
+}
+
+</script>
+
+</html>
+
