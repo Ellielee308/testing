@@ -1,0 +1,11 @@
+doctype html 
+html(lang="en")
+    head 
+        title Enter your name
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    body
+        form.name_Form(action="/trackName", method="post")
+            label.name_Prompt Please enter your name:
+            br
+            input.name_Input(type="text", name="name")
+            button.name_Submit(type="submit") Submit

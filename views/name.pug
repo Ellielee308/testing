@@ -1,0 +1,10 @@
+doctype html 
+html(lang="en")
+    head 
+        title Welcome
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    body
+        p.userName Welcome, #{name}!
+        br
+        form.name_Exit(action="/goodbye", method="POST")
+            button.goodbye(type="submit") Log off
